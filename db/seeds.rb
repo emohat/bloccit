@@ -7,6 +7,13 @@ require 'faker'
      body:   Faker::Lorem.paragraph
    )
  end
+  1.times do
+  Post.create(
+  title: "Test Post",
+  body: "Stuff goes here"
+)
+end
+
  posts = Post.all
  
  # Create Comments
@@ -16,7 +23,8 @@ require 'faker'
      body: Faker::Lorem.paragraph
    )
  end
- 
+
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
