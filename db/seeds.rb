@@ -7,12 +7,6 @@ require 'faker'
      body:   Faker::Lorem.paragraph
    )
  end
-  1.times do
-  Post.create(
-  title: "Test Post",
-  body: "Stuff goes here"
-)
-end
 
  posts = Post.all
  
