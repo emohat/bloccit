@@ -8,6 +8,18 @@ require 'faker'
    )
  end
 
+if Post.where( title: "bleh", body: "also bleh" ).count ==0
+  Post.create(
+      title: "bleh",
+      body: "also bleh"
+    )
+end
+ 
+  p = Post.find_or_create_by!(
+      title: "bleh",
+      body: "also bleh"
+    )
+
  posts = Post.all
  
  # Create Comments
@@ -18,6 +30,10 @@ require 'faker'
    )
  end
 
+ Comment.find_or_create_by!(
+      post: p,
+      body: "also bleh"
+    )
 
  puts "Seed finished"
  puts "#{Post.count} posts created"
