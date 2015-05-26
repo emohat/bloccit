@@ -1,15 +1,16 @@
 require 'faker'
  #Create Users
+ # Create Users
  5.times do
-  user = User.new(
+   user = User.new(
     name:     Faker::Name.name,
     email:    Faker::Internet.email,
-    password: Faker::Lorem.charaters(10) 
-    )
-  user.skip.confirmation!
-  user.save!
-end
-users = User.all
+    password: Faker::Lorem.characters(10)
+   )
+   user.skip_confirmation!
+   user.save!
+ end
+ users = User.all
 
 # Note: by calling `User.new` instead of `create`,
 # we create an instance of User which isn't immediately saved to the database.
@@ -42,7 +43,7 @@ users = User.all
  user = User.first
  user.skip_reconfirmation!
  user.update_attributes!(
-    email:'erin.mohat@gmail.com'
+    email:'erin.mohat@gmail.com',
     password: 'CodeWork21')
 
  puts "Seed finished"
