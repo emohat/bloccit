@@ -1,4 +1,9 @@
 <h1><%= @post.title %></h1>
+<h4><%= @post.summary %></h4>
+<% if (@post.summary == nil) %>
+  <%= link_to "Create a Post Summary", new_topic_summary_path(@topic, @post) %>
+<% end %>
+
 
 <div class="row">
   <div class="col-md-8">
